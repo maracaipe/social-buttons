@@ -1,4 +1,4 @@
-social-buttons
+Social Buttons [![Build Status](https://travis-ci.org/maracaipe/social-buttons.png)](https://travis-ci.org/maracaipe/social-buttons)
 ==============
 
-Web Component wrapper to use most of social network buttons/boxes using Polymer jQuery Plugin
+On the way...

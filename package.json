@@ -1,0 +1,29 @@
+{
+  "name": "Social-Buttons",
+  "namespace": "social-buttons",
+  "title": "Social Buttons",
+  "version": "0.0.1",
+  "description": "Web Component wrapper to use most of social network buttons/boxes using Polymer jQuery Plugin",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/maracaipe/social-buttons.git"
+  },
+  "author": {
+    "name": "Gabriel Carvalho (maracaipe) & Daniel Moraes (danielmoraesb)"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/maracaipe/social-buttons/issues"
+  },
+  "homepage": "https://maracaipe.github.com/social-buttons",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
