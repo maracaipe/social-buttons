@@ -1,4 +1,4 @@
-Social Buttons [![Build Status](https://travis-ci.org/maracaipe/social-buttons.png)](https://travis-ci.org/maracaipe/social-buttons)
+Social Buttons
 ==============
 
 On the way...
