@@ -5,17 +5,164 @@
 	<title>Social Buttons</title>
 
 	<!-- JS -->
+	<script src="dist/polymer.min.js"></script>
+	<script src="bower_components/jquery/jquery.min.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="bower_components/platform/platform.js"></script>
-	<script src="bower_components/polymer/polymer.js"></script>
-
 	<!-- CSS -->
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-
+	<style>.container{width:900px !important;}section{margin: 100px 0;}</style>
 	<!-- Components -->
-	<link rel="import" href="src/twitter.html">
+	<link rel="import" href="dist/all.html">
 </head>
 <body>
-	
+	<div class="container">
+		<header>			
+			<div class="page-header">	
+				<h1>Social buttons</h1>
+				<small>Web Component wrapper to use most of social network buttons/boxes using Polymer</small>
+			</div>
+			<div>
+				<ul class="nav nav-pills">
+					<li><a href="#getting-started">Getting Started</a></li>
+					<li><a href="#components">Components</a></li>
+					<li><a href="#credits">Credits</a></li>
+				</ul>
+			</div>
+		</header>
+		<section id="getting-started">
+			<div class="page-header">
+				<h2>Getting started</h2>
+			</div>
+			<p>
+				Social buttons uses <a href="http://polymer-project.org" target="_blank">Polymer</a> library for all components, then you need to import it to your site before start to use Social buttons.
+			</p>
+			<ol>
+				<li>Import Polymer to your site: <code>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.0.20131107/polymer.min.js"&gt;&lt;/script&gt;</code></li>
+				<li>
+					Import Social Buttons to your site by:
+					<ul>
+						<li>Clonnig our git repo with <code>git clone git://github.com/maracaipe/social-buttons.git</code></li>
+						<li>Download <a>latest release</a> (not available yet; you can download the working branch <code>gh-pages</code> <a href="https://github.com/maracaipe/social-buttons/archive/gh-pages.zip">here</a>, instead.)</li>
+						<li>Installing our bower package (1.0 release) with <code>bower install &lt;not-yet&gt;</code></li>
+					</ul>
+				</li>
+				<li>
+					Put social buttons to your site with link import: <code>&lt;link rel="import" href="dist/&lt;module&gt;.html"&gt;</code>
+					<ul>
+						<li>Load all components by pointing <code>all.html</code></li>
+						<li>instead, you can load a component you want by pointing <code>&lt;social-network&gt;/&lt;component&gt;.html</code></li>
+					</ul>
+				</li>
+				<li>Start to use social button <a href="#components">components</a>!</li>
+			</ol>
+		</section>
+		<section id="components">
+			<div class="page-header">
+				<h2>Components</h2>
+			</div>
+			<div id="components-tabs">
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#comp-facebook" data-toggle="tab">Facebook</a></li>
+					<li><a href="#comp-twitter" data-toggle="tab">Twitter</a></li>
+					<li><a href="#comp-gplus" data-toggle="tab">Google+</a></li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div class="tab-pane active" id="comp-facebook">
+						<div class="page-header">
+							<h3>Facebook like button <small>by <a href="http://github.com/zenorocha">Zeno Rocha</a> - <a href="https://developers.facebook.com/docs/plugins/like-button/">official page</a></small></h3>
+						</div>
+						<h4>Usage</h4>
+						<p>Put a like button on the page by placing <code>&lt;facebook-like&gt;&lt;/facebook-like&gt;</code> to your code.</p>
+						<h4>Options</h4>
+						<div class="table-responsive">
+							<table class="table table-condensed">
+								<thead>
+									<tr>
+										<th>Parameter</th>
+										<th class="col-md-3">Values</th>
+										<th>Default</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><code>action</code></td>
+										<td><code>like</code>, <code>recommend</code></td>
+										<td><code>like</code></td>
+										<td><p>The verb to display on the button.</p></td>
+									</tr>
+									<tr>
+										<td><code>colorscheme</code></td>
+										<td><code>light</code>, <code>dark</code></td>
+										<td><code>light</code></td>
+										<td><p>The color scheme used on the button.</p></td>
+									</tr>
+									<tr>
+										<td><code>href</code></td>
+										<td>any absolute url</td>
+										<td>current url</td>
+										<td><p>The absolute URL of the page that will be liked.</p></td>
+									</tr>
+									<tr>
+										<td><code>layout</code></td>
+										<td><code>standart</code>, <code>button_count</code>, <code>box_count</code></td>
+										<td><code>button_count</code></td>
+										<td><p>Selects one of the different layouts that are available for the plugin.</p></td>
+									</tr>
+									<tr>
+										<td><code>ref</code></td>
+										<td></td>
+										<td><code>None</code></td>
+										<td><p>A label for tracking referrals which must be less than 50 characters and can contain alphanumeric characters and some punctuation (currently +/=-.:_). </p></td>
+									</tr>
+									<tr>
+										<td><code>share</code></td>
+										<td><code>true</code>, <code>false</code></td>
+										<td><code>true</code></td>
+										<td><p>Specifies whether to include a share button beside the Like button.</p></td>
+									</tr>
+									<tr>
+										<td><code>show_faces</code></td>
+										<td><code>true</code>, <code>false</code></td>
+										<td><code>false</code></td>
+										<td><p>Specifies whether to display profile photos below the button (standard layout only).</p></td>
+									</tr>
+									<tr>
+										<td><code>width</code></td>
+										<td>some width</td>
+										<td><code>120</code>(px)</td>
+										<td><p>The width of the plugin. The layout you choose affects the minimum and default widths you can use.</p></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<h4>Demo:</h4>
+						<p><code>&lt;facebook-like&gt;&lt;/facebook-like&gt;</code>: <facebook-like></facebook-like></p>
+						<p><code>&lt;facebook-like share="false" href="http://facebook.com/facebook"&gt;&lt;/facebook-like&gt;</code>: <facebook-like width="100" share="false" href="http://facebook.com/facebook"></facebook-like></p>
+					</div>
+					<div class="tab-pane" id="comp-twitter">
+						sasasasasas
+					</div>
+					<div class="tab-pane" id="comp-gplus">
+						aassdaweqwe
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="credits">
+			<div class="page-header">
+				<h2>Credits</h2>
+			</div>
+			<ul>
+				<li><a href="http://github.com/zenorocha">Zeno Rocha</a> - Facebook button & Twitter button components</li>
+			</ul>
+		</section>
+		<footer class="well well-sm">
+			&copy; 2013 - <a href="http://github.com/maracaipe">Gabriel Carvalho</a> & <a href="http://github.com/danielmoraesb">Daniel Moraes</a> - Licensed by <a href="http://carvalho.mit-license.org">MIT License</a>
+		</footer>
+	</div>
+	<script>$('#components-tabs a').click(function (e) { e.preventDefault() $(this).tab('show'))</script>
 </body>
 </html>

@@ -10,7 +10,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/maracaipe/social-buttons.git"
+    "url": "git://github.com/maracaipe/social-buttons.git",
+    "branch": "gh-pages"
   },
   "author": {
     "name": "Gabriel Carvalho (maracaipe) & Daniel Moraes (danielmoraesb)"
@@ -24,7 +25,6 @@
   "dependencies" : {
     "jQuery": "~1.10.2",
     "Polymer": "~0.1.1"
-
   },
 
   "devDependencies": {

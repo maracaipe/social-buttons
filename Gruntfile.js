@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     
     concat: {
       social_buttons: {
-        src: ['src/*.html'],
+        src: ['src/**/*.html'],
         dest: 'dist/all.html'
       },
       polymer:{
@@ -33,13 +33,21 @@ module.exports = function(grunt) {
         src: '<%= concat.polymer.dest %>',
         dest: 'dist/polymer.min.js'
       }
+    },
+
+    watch: {
+      social_buttons: {
+        files: ['src/**/*.html'],
+        tasks: ['default']
+      }
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+grunt.loadNpmTasks('grunt-contrib-concat');
+grunt.loadNpmTasks('grunt-contrib-uglify');
+grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-  grunt.registerTask('default', ['concat', 'uglify']);
+grunt.registerTask('default', ['concat', 'uglify']);
+grunt.registerTask('wattch', ['watch']);
 };
