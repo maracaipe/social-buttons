@@ -1,0 +1,22 @@
+{
+  "name": "social-buttons",
+  "version": "0.0.1",
+  "homepage": "http://maracaipe.github.io/social-buttons",
+  "authors": [
+    "Gabriel Carvalho <maracaipe1098@gmail.com>",
+    "Daniel Moraes <danieldemoraesb@gmail.com>"
+  ],
+  "description": "Web Component wrapper to use most of social network buttons/boxes using Polymer",
+  "main": "dist/polymer.social-buttons.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~0.1.1"
+  }
+}

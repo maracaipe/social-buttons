@@ -1,32 +1,37 @@
 module.exports = function(grunt) {
 
-  
+
   grunt.initConfig({
-    
+
     pkg: grunt.file.readJSON('package.json'),
-    banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-      '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-      '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-      '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;\n' +
-      '* Licenses: Apache 2.0, MIT <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
+    banner: '/* <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
+    '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
+    '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
+    '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;\n' +
+    '* Licenses: Apache 2.0, MIT <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     
     concat: {
-      options: {
-        banner: '<%= banner %>',
-        stripBanners: true
+      social_buttons: {
+        src: ['src/*.html'],
+        dest: 'dist/all.html'
       },
-      dist: {
-        src: ['src/*.js'],
-        dest: 'dist/polymer.<%= pkg.namespace %>.js'
+      polymer:{
+        options: {
+          banner: '<%= banner %>',
+          stripBanners: true
+        },
+        src: ['bower_components/platform/platform.js', 'bower_components/polymer/polymer.js'],
+        dest: 'dist/polymer.js'
       }
     },
+
     uglify: {
       options: {
         banner: '<%= banner %>'
       },
-      dist: {
-        src: '<%= concat.dist.dest %>',
-        dest: 'dist/polymer.<%= pkg.namespace %>.min.js'
+      polymer: {
+        src: '<%= concat.polymer.dest %>',
+        dest: 'dist/polymer.min.js'
       }
     }
   });
@@ -37,5 +42,4 @@ module.exports = function(grunt) {
 
 
   grunt.registerTask('default', ['concat', 'uglify']);
-
 };
