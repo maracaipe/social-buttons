@@ -1,5 +1,7 @@
 #Social Buttons
 
+[![project status](http://stillmaintained.com/maracaipe/social-buttons.png)](http://stillmaintained.com/maracaipe/social-buttons)
+
 On the way...
 
 ## License
